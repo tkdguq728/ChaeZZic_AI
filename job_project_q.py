@@ -35,9 +35,8 @@ def generate_job_and_project_questions(job_description, project_description):
     return job_and_project_questions
 
 # 직무와 프로젝트 정보를 설정하여 질문 생성
-job_description = "백엔드 개발자"
-project_description = """Shopping Mall Project 쇼핑몰의 기본 기능 구현에 집중하여 진행한 프로젝트인 Shopping Mall Project는 로그인, 마이페이지, 장바구니로 향할 수 있는 메뉴와 공지사항이나 질문 등의 게시판으로 향하는 메뉴로 구성되어 있다.."""
-
+job_description = 
+project_description = 
 job_and_project_questions = generate_job_and_project_questions(job_description, project_description)
 print("\n직무 및 프로젝트 관련 질문:")
 for i, question in enumerate(job_and_project_questions, start=1):
