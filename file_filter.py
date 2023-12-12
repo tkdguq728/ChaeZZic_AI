@@ -13,7 +13,7 @@ language_patterns = {
         "kotlin": r"\.kt$",
 }
 
-language = "python"
+language = 
 
 pattern = language_patterns.get(language.lower())
 
