@@ -34,10 +34,3 @@ def generate_code_related_questions(code):
     code_related_questions = [question.text.strip() for question in response.choices]
     
     return code_related_questions
-    
-code_to_analyze
-
-# 코드 관련 질문 생성
-code_questions = generate_code_related_questions(code_to_analyze)
-for i, question in enumerate(code_questions, start=1):
-    print(f"Question {i}: {question}")
