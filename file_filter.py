@@ -13,8 +13,6 @@ language_patterns = {
         "kotlin": r"\.kt$",
 }
 
-language = 
-
 pattern = language_patterns.get(language.lower())
 
 file_list = json_to_data.file_list
