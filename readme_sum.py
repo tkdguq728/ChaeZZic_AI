@@ -18,4 +18,5 @@ summary_text_ids = model.generate(
     min_length = 64, # 요약문의 최소 길이 설정
     num_beams = 5) # 문장 생성 시 다음 단어를 탐색하는 영역의 개수
 
-print(tokenizer.decode(summary_text_ids[0], skip_special_tokens=True))
+summary_text = tokenizer.decode(summary_text_ids[0], skip_special_tokens=True)
+
