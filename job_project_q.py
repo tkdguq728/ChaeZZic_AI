@@ -35,8 +35,8 @@ def generate_job_and_project_questions(job_description, project_description):
     return job_and_project_questions
 
 # 직무와 프로젝트 정보를 설정하여 질문 생성
-job_description = 
-project_description = 
+job_description = readme_sum.summary_text
+project_description 
 job_and_project_questions = generate_job_and_project_questions(job_description, project_description)
 print("\n직무 및 프로젝트 관련 질문:")
 for i, question in enumerate(job_and_project_questions, start=1):
