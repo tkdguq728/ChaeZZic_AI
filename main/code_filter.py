@@ -25,18 +25,3 @@ language_patterns = {
     "c++": r"\.cpp$",
     "kotlin": r"\.kt$",
 }
-
-# 입력으로 주어진 코드 리스트
-code_list = [
-    {"name": "1.py", "contents": "Python code 1"},
-    {"name": "2.py", "contents": "Python code 2"},
-    {"name": "readme.md", "contents": "README contents"},
-    {"name": "4.js", "contents": "JavaScript code"},
-]
-
-# 언어 선택 (예: "python")
-selected_language = "python"
-
-# 선택된 언어에 해당하는 코드 추출
-filtered_code = extract_code_by_language(code_list, selected_language)
-print(filtered_code)
