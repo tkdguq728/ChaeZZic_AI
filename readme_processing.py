@@ -21,10 +21,3 @@ def remove_markdown(readme_text):
     # '*' 기호 제거
     readme_text = re.sub(r'\*', '', readme_text)
     return readme_text
-
-readme_text = readme_content.decode("utf-8")
-
-readme_text = readme_text.replace('\n', ' ')
-removed_readme = remove_markdown(readme_text)
-
-cleaned_readme = re.sub(r'\s+', ' ', removed_readme)
