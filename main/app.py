@@ -9,7 +9,7 @@ from flask_cors import CORS
 import random
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins="43.200.7.70:3000")
 
 @app.route('/generate_AI', methods=['POST'])
 def generate_Ai():
