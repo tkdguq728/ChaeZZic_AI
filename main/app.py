@@ -25,7 +25,7 @@ def generate_Ai():
       # code 추출해서 랜덤 선택
       code_list = extract_code(data_list, language)
       selected_code_file = random.choice(code_list)
-      selected_code = selected_code.get("contents")
+      selected_code = selected_code_file.get("contents")
 
       # readme 추출
       readme = extract_readme_code(data_list)
@@ -48,5 +48,21 @@ def generate_Ai():
     except Exception as e:
       return jsonify({"message": "에러가 발생했습니다."}), 500
 
+@app.route('/send_data_to_react', methods=['GET'])
+def send_data_to_react():
+    try:
+        # JSON 데이터 수신 (아래 라인을 통해 실제로 /generate_AI 엔드포인트에 요청을 보냄)
+        response = app.test_client().post('/generate_AI', json={})
+        
+        # generate_AI 함수의 응답을 가져옴
+        generate_ai_response_data = response.get_json()
+
+        # 리액트로 전달할 데이터
+        data_for_react = {"questions": generate_ai_response_data.get("questions")}
+
+        return jsonify(data_for_react), 200
+    except Exception as e:
+        return jsonify({"message": "에러가 발생했습니다."}), 500
+        
 if __name__ == '__main__':
     app.run(debug=True)
