@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from code_filter import extract_code
+from code_filter import extract_code_by_language
 from readme_filter import extract_readme_code
 from readme_processing import remove_markdown
 from readme_sum import summarize_readme
