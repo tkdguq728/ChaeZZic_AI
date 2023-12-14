@@ -1,5 +1,0 @@
-def extract_repo_info(project):
-    reponame = project.get("reponame")
-    lang = project.get("lang")
-    files = project.get("file", [])
-    return reponame, lang, files
