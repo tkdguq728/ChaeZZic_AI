@@ -23,7 +23,7 @@ def generate_Ai():
       data_list = json.loads(json_data)
  
       # code 추출해서 랜덤 선택
-      code_list = extract_code(data_list, language)
+      code_list = extract_code_by_language(data_list, language)
       selected_code_file = random.choice(code_list)
       selected_code = selected_code_file.get("contents")
 
@@ -65,4 +65,4 @@ def send_data_to_react():
         return jsonify({"message": "에러가 발생했습니다."}), 500
         
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='43.200.7.70', port=5000, debug=True)
