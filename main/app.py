@@ -44,9 +44,9 @@ def generate_Ai():
       all_questions = job_and_project_questions + code_related_questions
       response_data = {"questions": all_questions}
 
-        return jsonify(response_data), 200
+      return jsonify(response_data), 200
     except Exception as e:
-        return jsonify({"message": "에러가 발생했습니다."}), 500
+      return jsonify({"message": "에러가 발생했습니다."}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)
