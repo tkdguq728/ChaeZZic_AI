@@ -20,17 +20,17 @@ def generate_Ai():
         json_data = request.get_json()
 
         # JSON 데이터를 리스트로 변환
-        data_list = json_data if isinstance(json_data, list) else [json_data]
+        data_list = json_data.get("portfolio", [])
 
         # job, portfolio 구분
-        job, portfolio = extract_job_and_portfolio(data_list)
-
+        job = json_data.get("job")
+        
         # 질문 저장할 리스트
         all_repo_questions = []
 
-        for project in portfolio:
+        for project in data_list:
             # language랑 file_list 추출
-            language = project['lang'] if 'lang' in project else ''
+            language = project.get('lang', '')
             files = project.get("file", [])
 
             # language에 따른 코드 추출후에 random하게 선택
