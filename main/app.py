@@ -93,4 +93,4 @@ def generate_Ai_logic():
     return response.get_json()
         
 if __name__ == '__main__':
-    app.run(host='43.200.7.70', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
