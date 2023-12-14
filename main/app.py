@@ -4,7 +4,7 @@ from readme_filter import extract_readme_code
 from readme_processing import remove_markdown
 from readme_sum import summarize_readme
 from gen_code import generate_code_related_questions
-from gen_jobreadme import generate_job_and_project_questions
+from gen_jobproj import generate_job_and_project_questions
 import random
 
 app = Flask(__name__)
