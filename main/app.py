@@ -5,6 +5,8 @@ from readme_processing import remove_markdown
 from readme_sum import summarize_readme
 from gen_code import generate_code_related_questions
 from gen_jobproj import generate_job_and_project_questions
+from extract_repo_info import extract_job_and_portfolio
+from extract_repo_info import extract_repo_info
 from flask_cors import CORS
 import random
 
