@@ -12,16 +12,16 @@ app = Flask(__name__)
 @app.route('/generate_AI', methods=['POST'])
 def generate_Ai():
     try:
-        # JSON 데이터 수신
-        json_data = request.get_json()
+      # JSON 데이터 수신
+      json_data = request.get_json()
       
       # 문자열 데이터 수신
-        job = request.form.get('string_data1')
-        language = request.form.get('string_data2')
+      job = request.form.get('string_data1')
+      language = request.form.get('string_data2')
 
-        # JSON 데이터를 리스트로 변환
-       data_list = json_data
-
+      # JSON 데이터를 리스트로 변환
+      data_list = json.loads(json_data)
+ 
       # code 추출해서 랜덤 선택
       code_list = extract_code(data_list, language)
       selected_code_file = random.choice(code_list)
