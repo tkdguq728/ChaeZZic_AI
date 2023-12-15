@@ -13,6 +13,10 @@ import random
 app = Flask(__name__)
 CORS(app, origins="43.200.7.70:3000")
 
+# 로깅 설정
+import logging
+logging.basicConfig(level=logging.DEBUG)
+
 @app.route('/generate_AI', methods=['POST'])
 def generate_Ai():
     try:
@@ -24,7 +28,7 @@ def generate_Ai():
 
         # job, portfolio 구분
         job = json_data.get("job")
-        
+
         # 질문 저장할 리스트
         all_repo_questions = []
 
@@ -36,10 +40,10 @@ def generate_Ai():
             # language에 따른 코드 추출후에 random하게 선택
             code_list = extract_code_by_language(files, language)
             selected_code_file = random.choice(code_list)
-            selected_code = selected_code_file.get("contents")
+            selected_code = selected_code_file.get("content")
 
             # readme 추출
-            readme_contents = next((file_info["contents"] for file_info in files if file_info.get("name", "").lower() == "readme.md"), None)
+            readme_contents = next((file_info["content"] for file_info in files if file_info.get("name", "").lower() == "readme.md"), None)
 
             # readme 파일 전처리
             readme_processing = remove_markdown(readme_contents)
@@ -56,7 +60,9 @@ def generate_Ai():
 
             all_repo_questions.append(all_questions)
 
-        return jsonify(all_repo_question), 200
+        app.logger.info(f"All Repo Questions: {all_repo_questions}")
+
+        return jsonify(all_repo_questions), 200
 
     except ValueError as ve:
         # JSON 디코딩 오류 처리
@@ -79,6 +85,8 @@ def send_data_to_react():
         # 리액트로 전달할 데이터
         data_for_react = {"questions": generate_ai_response_data.get("questions")}
 
+        app.logger.info(f"Data for React: {data_for_react}")
+
         return jsonify(data_for_react), 200
     except Exception as e:
         app.logger.error(f"에러가 발생했습니다: {str(e)}")  # 로깅
@@ -88,6 +96,6 @@ def generate_Ai_logic():
     # /generate_AI 엔드포인트의 로직을 직접 호출
     response = app.test_client().post('/generate_AI', json={})
     return response.get_json()
-        
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
