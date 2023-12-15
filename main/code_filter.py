@@ -17,11 +17,11 @@ def extract_code_by_language(code_list, language):
 
 # 예제 사용
 language_patterns = {
-    "java": r"\.java$",
-    "javascript": r"\.js$",
-    "python": r"\.py$",
-    "c": r"\.c$",
-    "c#": r"\.cs$",
-    "c++": r"\.cpp$",
-    "kotlin": r"\.kt$",
+    "Java": r"\.java$",
+    "Javascript": r"\.js$",
+    "Python": r"\.py$",
+    "C": r"\.c$",
+    "C#": r"\.cs$",
+    "C++": r"\.cpp$",
+    "Kotlin": r"\.kt$",
 }
