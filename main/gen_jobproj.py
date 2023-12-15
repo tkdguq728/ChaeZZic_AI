@@ -18,12 +18,13 @@ def generate_job_and_project_questions(job_description, project_description):
                  여덟째, 생성한 질문만 출력하세요.
                  아홉쨰, 생성한 질문에 대한 답변도 생성해줘
                  열번째, 사용한 언어에 대한 질문은 제외해줘
+                 열한번째, 커뮤니케이션에 대한 질문을 1개만 생성해줘
                  \n\n직무 설명: {job_description}\n\n프로젝트 설명: {project_description}"""
     
     response = openai.Completion.create(
         engine="text-davinci-003",  
         prompt=prompt,
-        max_tokens=350,  # 생성할 최대 토큰 수
+        max_tokens=500,  # 생성할 최대 토큰 수
         n=3,  # 질문 수
         stop=None,  # 생성 중지 단어 설정 (생략 가능)
         temperature=1.0,  # 다양성 조절 (0.2부터 1.0까지의 값 사용)
