@@ -11,14 +11,14 @@ def extract_code_by_language(code_list, language):
     filtered_code_list = []
     for code in code_list:
         if re.search(pattern, code["name"], re.IGNORECASE):
-            filtered_code_list.append({"name": code["name"], "contents": code["contents"]})
+            filtered_code_list.append({"name": code["name"], "contents": code["content"]})
     
     return filtered_code_list
 
 # 예제 사용
 language_patterns = {
     "Java": r"\.java$",
-    "Javascript": r"\.js$",
+    "JavaScript": r"\.js$",
     "Python": r"\.py$",
     "C": r"\.c$",
     "C#": r"\.cs$",
