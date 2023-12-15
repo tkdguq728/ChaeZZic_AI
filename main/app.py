@@ -30,8 +30,8 @@ def generate_Ai():
 
         for project in data_list:
             # language랑 file_list 추출
-            language = project.get('lang', '')
-            files = project.get("file", [])
+            language = project.get('language', '')
+            files = project.get("files", [])
 
             # language에 따른 코드 추출후에 random하게 선택
             code_list = extract_code_by_language(files, language)
