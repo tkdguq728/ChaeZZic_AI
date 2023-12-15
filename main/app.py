@@ -56,12 +56,7 @@ def generate_Ai():
 
             all_repo_questions.append(all_questions)
 
-        questions_list = []
-        for project_questions in all_repo_questions:
-            for question in project_questions:
-                questions_list.append({"question": question})
-
-        return jsonify({"questions": questions_list}), 200
+        return jsonify(all_repo_question), 200
 
     except ValueError as ve:
         # JSON 디코딩 오류 처리
