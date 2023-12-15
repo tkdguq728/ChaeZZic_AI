@@ -11,7 +11,7 @@ from flask_cors import CORS
 import random
 
 app = Flask(__name__)
-CORS(app, origins="43.200.7.70:3000")
+CORS(app)
 
 # 로깅 설정
 import logging
