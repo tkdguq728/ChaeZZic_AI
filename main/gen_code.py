@@ -25,7 +25,7 @@ def generate_code_related_questions(code):
         engine="text-davinci-003",  # GPT-3 엔진 선택
         prompt=prompt,
         max_tokens=500,  # 생성할 최대 토큰 수
-        n=2,  # 생성할 코드 관련 질문 수
+        n=3,  # 생성할 코드 관련 질문 수
         stop=None,  # 생성 중지 단어 설정 (생략 가능)
         temperature=1.0  # 다양성 조절 (0.2부터 1.0까지의 값 사용)
     )
